@@ -97,7 +97,7 @@ void lv_label_set_text(lv_obj_t * obj, const char * text);
  * lv_label_set_text_fmt(label1, "%d user", user_num);
  * @endcode
  */
-void lv_label_set_text_fmt(lv_obj_t * obj, const char * fmt, ...) LV_FORMAT_ATTRIBUTE(2, 3);
+//void lv_label_set_text_fmt(lv_obj_t * obj, const char * fmt, ...) LV_FORMAT_ATTRIBUTE(2, 3);
 
 /**
  * Set a static text. It will not be saved by the label so the 'text' variable

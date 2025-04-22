@@ -123,7 +123,7 @@ void lv_subject_copy_string(lv_subject_t * subject, const char * buf);
  * @param subject   pointer to Subject
  * @param format    format string
  */
-void lv_subject_snprintf(lv_subject_t * subject, const char * format, ...) LV_FORMAT_ATTRIBUTE(2, 3);
+//void lv_subject_snprintf(lv_subject_t * subject, const char * format, ...) LV_FORMAT_ATTRIBUTE(2, 3);
 
 /**
  * Get current value of a string Subject.
