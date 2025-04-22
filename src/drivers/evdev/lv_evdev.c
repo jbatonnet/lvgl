@@ -508,6 +508,24 @@ lv_result_t lv_evdev_discovery_stop(void)
 #endif
 }
 
+void lv_evdev_grab_device(lv_indev_t * indev)
+{
+    lv_evdev_t * dsc = lv_indev_get_driver_data(indev);
+    LV_ASSERT_NULL(dsc);
+    
+    if(ioctl(dsc->fd, EVIOCGRAB, (void*)1) < 0)
+        LV_LOG_WARN("ioctl EVIOCGRAB(1) failed: %s", strerror(errno));
+}
+
+void lv_evdev_release_device(lv_indev_t * indev)
+{
+    lv_evdev_t * dsc = lv_indev_get_driver_data(indev);
+    LV_ASSERT_NULL(dsc);
+    
+    if(ioctl(dsc->fd, EVIOCGRAB, (void*)0) < 0)
+        LV_LOG_WARN("ioctl EVIOCGRAB(0) failed: %s", strerror(errno));
+}
+
 void lv_evdev_set_swap_axes(lv_indev_t * indev, bool swap_axes)
 {
     lv_evdev_t * dsc = lv_indev_get_driver_data(indev);

@@ -65,6 +65,18 @@ lv_result_t lv_evdev_discovery_start(lv_evdev_discovery_cb_t cb, void * user_dat
 lv_result_t lv_evdev_discovery_stop(void);
 
 /**
+ * Grabs the specified device. Further input will then be exclusive to this process.
+ * @param indev evdev input device
+ */
+void lv_evdev_grab_device(lv_indev_t * indev);
+
+/**
+ * Releases the specified device. Further input will then be shared with other processes.
+ * @param indev evdev input device
+ */
+void lv_evdev_release_device(lv_indev_t * indev);
+
+/**
  * Set whether coordinates of pointer device should be swapped. Defaults to
  * false.
  * @param indev evdev input device
